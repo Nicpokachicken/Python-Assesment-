@@ -6,7 +6,8 @@ import random
 import time
 
 print("Welcome to TURBO TITANS")
-time.sleep(0.5)
+time.sleep(0.5) #The sleep function makes the code print with a 0.5 sec gap between the prints
+#This are the variables that link the car to the car's number
 Lamborghini = 1
 Bugatti = 2
 Ferrari = 3
@@ -14,6 +15,7 @@ Ford = 4
 Toyota = 5
 Nissan_juke = 6
 
+#These variables are the cars score
 Lamborghini_score = 0
 Bugatti_score = 0
 Ferrari_score = 0
@@ -30,7 +32,7 @@ def car_input_validated(Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_juke
         car = (input("Please choose your car : "))#this askes for user input
         time.sleep(0.5)
         if car == "Lamborghini":
-            return Lamborghini #this links the cars name to its number
+            return Lamborghini #this links the cars name back to the varible that links the car to its number
         elif car == "Bugatti":
             return Bugatti
         elif car == "Ferrari":
@@ -46,24 +48,24 @@ def car_input_validated(Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_juke
 
             print("Invalid input. try again.")
 
-print(f"Your car is car {car_input_validated(1, 2, 3, 4, 5, 6)}")
+print(f"Your car is car {car_input_validated(1, 2, 3, 4, 5, 6)}") #This tells you the number of your car
 time.sleep(0.5)
 
 print("You have chosen well!")
 time.sleep(0.5)
 print("You will win by praying that your cars number is rolled 5 times before any other car.")
-time.sleep(0.5)
+time.sleep(1.5)
 print("Racing starts now!")
-time.sleep(3)
+time.sleep(1)
 
 def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_score, Toyota_score, Nissan_juke_score):
     car_score = 0
     while True:
-        dice = random.randint(1, 6)
-        print("The dice roll is: " + str(dice))
+        dice = random.randint(1, 6) #This is why the dice roll is random as it chooses a number between 1-6
+        print("The dice roll is: " + str(dice))#This prints the dice roll
         time.sleep(1)
         if dice == 1:
-            Lamborghini_score +=1
+            Lamborghini_score +=1 #When a dice is rolled its number correlates to a car and increases that cars score
         elif dice == 2:
             Bugatti_score +=1
         elif dice == 3:
@@ -76,7 +78,7 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
             Nissan_juke_score += 1
         else:
             print("roll again")
-        print("Lamborghini score is:" + str(Lamborghini_score))
+        print("Lamborghini score is:" + str(Lamborghini_score)) #This prints the recorded car's score
         time.sleep(0.5)
         print("Bugatti score is now:" + str(Bugatti_score))
         time.sleep(0.5)
@@ -87,7 +89,7 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
         print("Toyota score is now:" + str(Toyota_score))
         time.sleep(0.5)
         print("Nissan juke score is now:" + str(Nissan_juke_score))
-        time.sleep(4)
+        time.sleep(3)
         if Lamborghini_score == 5:
             return "The Lambrghini won"
         elif Ferrari_score == 5:
