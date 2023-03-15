@@ -4,6 +4,7 @@
 # The winning car is the one which completes the race distance the first.
 import random
 import time
+
 print("Welcome to TURBO TITANS")
 time.sleep(0.5)
 Lamborghini = 1
@@ -50,7 +51,7 @@ time.sleep(0.5)
 
 print("You have chosen well!")
 time.sleep(0.5)
-print("You will win by praying that your cars number is rolled 3 times before any other car.")
+print("You will win by praying that your cars number is rolled 5 times before any other car.")
 time.sleep(0.5)
 print("Racing starts now!")
 time.sleep(3)
@@ -60,6 +61,7 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
     while True:
         dice = random.randint(1, 6)
         print("The dice roll is: " + str(dice))
+        time.sleep(1)
         if dice == 1:
             Lamborghini_score +=1
         elif dice == 2:
@@ -75,23 +77,28 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
         else:
             print("roll again")
         print("Lamborghini score is:" + str(Lamborghini_score))
+        time.sleep(0.5)
         print("Bugatti score is now:" + str(Bugatti_score))
+        time.sleep(0.5)
         print("Ferrari score is now:" + str(Ferrari_score))
+        time.sleep(0.5)
         print("Ford score is now:" + str(Ford_score))
+        time.sleep(0.5)
         print("Toyota score is now:" + str(Toyota_score))
+        time.sleep(0.5)
         print("Nissan juke score is now:" + str(Nissan_juke_score))
-        time.sleep(2.5)
-        if Lamborghini_score == 3:
+        time.sleep(4)
+        if Lamborghini_score == 5:
             return "The Lambrghini won"
-        elif Ferrari_score == 3:
+        elif Ferrari_score == 5:
             return "The Ferarri won"
-        elif Bugatti_score == 3:
+        elif Bugatti_score == 5:
             return "The Bugatti won"
-        elif Ford_score == 3:
+        elif Ford_score == 5:
             return "The Ford won"
-        elif Toyota_score == 3:
+        elif Toyota_score == 5:
             return "The Toyota won"
-        elif Nissan_juke_score == 3:
+        elif Nissan_juke_score == 5:
             return "The Nissan Juke won"
 print(car_score_validated(0, 0, 0, 0, 0, 0))
 
