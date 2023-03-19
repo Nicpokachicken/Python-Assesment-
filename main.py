@@ -13,7 +13,7 @@ Bugatti = 2
 Ferrari = 3
 Ford = 4
 Toyota = 5
-Nissan_juke = 6
+Nissan_Juke = 6
 
 #These variables are the cars score
 Lamborghini_score = 0
@@ -21,28 +21,31 @@ Bugatti_score = 0
 Ferrari_score = 0
 Ford_score = 0
 Toyota_score = 0
-Nissan_juke_score = 0
+Nissan_Juke_score = 0
+
+Dice_Rolled = 0
 
 def car_input_validated(Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_juke):
     car = 0
     while True:
 
-        print(f"Your choices are Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_juke")
+        print(f"Your choices are Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_Juke")
         time.sleep(0.5)
         car = (input("Please choose your car : "))#this askes for user input
         time.sleep(0.5)
-        if car == "Lamborghini":
+        car = car.lower()
+        if car == "lamborghini":
             return Lamborghini #this links the cars name back to the varible that links the car to its number
-        elif car == "Bugatti":
+        elif car == "bugatti":
             return Bugatti
-        elif car == "Ferrari":
+        elif car == "ferrari":
             return Ferrari
-        elif car == "Ford":
+        elif car == "ford":
             return Ford
-        elif car == "Toyota":
+        elif car == "toyota":
             return Toyota
-        elif car == "Nissan_juke":
-            return Nissan_juke
+        elif car == "nissan_juke":
+            return Nissan_Juke
 
         else:
 
@@ -58,8 +61,9 @@ time.sleep(1.5)
 print("Racing starts now!")
 time.sleep(1)
 
-def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_score, Toyota_score, Nissan_juke_score):
+def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_score, Toyota_score, Nissan_Juke_score):
     car_score = 0
+    Dice_Rolled = 0
     while True:
         dice = random.randint(1, 6) #This is why the dice roll is random as it chooses a number between 1-6
         print("The dice roll is: " + str(dice))#This prints the dice roll
@@ -75,9 +79,11 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
         elif dice == 5:
             Toyota_score +=1
         elif dice == 6:
-            Nissan_juke_score += 1
+            Nissan_Juke_score += 1
+
         else:
             print("roll again")
+        Dice_Rolled += 1
         print("Lamborghini score is:" + str(Lamborghini_score)) #This prints the recorded car's score
         time.sleep(0.5)
         print("Bugatti score is now:" + str(Bugatti_score))
@@ -88,7 +94,9 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
         time.sleep(0.5)
         print("Toyota score is now:" + str(Toyota_score))
         time.sleep(0.5)
-        print("Nissan juke score is now:" + str(Nissan_juke_score))
+        print("Nissan juke score is now:" + str(Nissan_Juke_score))
+        time.sleep(0.5)
+        print("The dice has been rolled: " + str(Dice_Rolled) + " times")
         time.sleep(3)
         if Lamborghini_score == 5:
             return "The Lambrghini won"
@@ -100,7 +108,7 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
             return "The Ford won"
         elif Toyota_score == 5:
             return "The Toyota won"
-        elif Nissan_juke_score == 5:
+        elif Nissan_Juke_score == 5:
             return "The Nissan Juke won"
 print(car_score_validated(0, 0, 0, 0, 0, 0))
 
