@@ -25,15 +25,16 @@ Nissan_Juke_score = 0
 
 Dice_Rolled = 0
 
-def car_input_validated(Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_juke):
+def car_input_validated(Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_Juke):
     car = 0
     while True:
 
-        print(f"Your choices are Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_Juke")
+        print(f"Your choices are Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan Juke")
         time.sleep(0.5)
         car = (input("Please choose your car : "))#this askes for user input
         time.sleep(0.5)
         car = car.lower()
+        car = car.strip()
         if car == "lamborghini":
             return Lamborghini #this links the cars name back to the varible that links the car to its number
         elif car == "bugatti":
@@ -44,7 +45,7 @@ def car_input_validated(Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_juke
             return Ford
         elif car == "toyota":
             return Toyota
-        elif car == "nissan_juke":
+        elif car == "nissanjuke":
             return Nissan_Juke
 
         else:
@@ -75,7 +76,7 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
         elif dice == 3:
             Ferrari_score +=1
         elif dice == 4:
-             Ford_score +=1
+            Ford_score +=1
         elif dice == 5:
             Toyota_score +=1
         elif dice == 6:
@@ -94,7 +95,7 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
         time.sleep(0.5)
         print("Toyota score is now:" + str(Toyota_score))
         time.sleep(0.5)
-        print("Nissan juke score is now:" + str(Nissan_Juke_score))
+        print("Nissan Juke score is now:" + str(Nissan_Juke_score))
         time.sleep(0.5)
         print("The dice has been rolled: " + str(Dice_Rolled) + " times")
         time.sleep(3)
@@ -109,7 +110,7 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
         elif Toyota_score == 5:
             return "The Toyota won"
         elif Nissan_Juke_score == 5:
-            return "The Nissan Juke won"
+            return "The Nissan Juke has crushed the competition as usual!"
 print(car_score_validated(0, 0, 0, 0, 0, 0))
 
 
