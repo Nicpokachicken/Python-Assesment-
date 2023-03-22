@@ -6,8 +6,8 @@ import random
 import time
 
 print("Welcome to TURBO TITANS")
-time.sleep(0.5) #The sleep function makes the code print with a 0.5 sec gap between the prints
-#This are the variables that link the car to the car's number
+time.sleep(0.5)  # The sleep function makes the code print with a 0.5 sec gap between the prints
+# This are the variables that link the car to the car's number
 Lamborghini = 1
 Bugatti = 2
 Ferrari = 3
@@ -15,7 +15,9 @@ Ford = 4
 Toyota = 5
 Nissan_Juke = 6
 
-#These variables are the cars score
+track_dist = 0
+
+# These variables are the cars score
 Lamborghini_score = 0
 Bugatti_score = 0
 Ferrari_score = 0
@@ -50,21 +52,35 @@ def car_input_validated(Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_Juke
 
         else:
 
-            print("Invalid input. try again.")
+            print("Invalid input. Try again.")
 
 print(f"Your car is car {car_input_validated(1, 2, 3, 4, 5, 6)}") #This tells you the number of your car
 time.sleep(0.5)
 
+
 print("You have chosen well!")
 time.sleep(0.5)
-print("You will win by praying that your cars number is rolled 5 times before any other car.")
-time.sleep(1.5)
-print("Racing starts now!")
-time.sleep(1)
-
-def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_score, Toyota_score, Nissan_Juke_score):
+def track_dist_validated():
+    track_dist = 0
+    while True:
+        try:
+            track_dist = int(input("Choose how long you want your road (5-15:) "))
+            if 5<= track_dist <=15:
+                return track_dist
+            else:
+                print("Invalid input.")
+                continue
+        except ValueError:
+            print("Invalid input.")
+        else:
+            break
+def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_score, Toyota_score, Nissan_Juke_score, length):
     car_score = 0
     Dice_Rolled = 0
+    print("You will win by praying that your cars number is rolled " + str(length) + " times before any other car.")
+    time.sleep(1.5)
+    print("Racing starts now!")
+    time.sleep(1)
     while True:
         dice = random.randint(1, 6) #This is why the dice roll is random as it chooses a number between 1-6
         print("The dice roll is: " + str(dice))#This prints the dice roll
@@ -99,19 +115,16 @@ def car_score_validated(Lamborghini_score, Bugatti_score, Ferrari_score, Ford_sc
         time.sleep(0.5)
         print("The dice has been rolled: " + str(Dice_Rolled) + " times")
         time.sleep(3)
-        if Lamborghini_score == 5:
+        if Lamborghini_score == length:
             return "The Lambrghini won"
-        elif Ferrari_score == 5:
+        elif Ferrari_score == length:
             return "The Ferarri won"
-        elif Bugatti_score == 5:
+        elif Bugatti_score == length:
             return "The Bugatti won"
-        elif Ford_score == 5:
+        elif Ford_score == length:
             return "The Ford won"
-        elif Toyota_score == 5:
+        elif Toyota_score == length:
             return "The Toyota won"
-        elif Nissan_Juke_score == 5:
+        elif Nissan_Juke_score == length:
             return "The Nissan Juke has crushed the competition as usual!"
-print(car_score_validated(0, 0, 0, 0, 0, 0))
-
-
-
+print(car_score_validated(0, 0, 0, 0, 0, 0, track_dist_validated()))
