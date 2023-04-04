@@ -36,7 +36,6 @@ def car_input_validated(Lamborghini, Bugatti, Ferrari, Ford, Toyota, Nissan_Juke
         car = (input("Please choose your car : "))#this askes for user input
         time.sleep(0.5)
         car = car.lower()
-        car = car.strip()
         if car == "lamborghini":
             return Lamborghini #this links the cars name back to the varible that links the car to its number
         elif car == "bugatti":
