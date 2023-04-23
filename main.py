@@ -17,7 +17,7 @@ Nissan_Juke = 6
 
 track_dist = 0
 
-# These variables are the cars score
+# these variables are the cars score
 Lamborghini_score = 0
 Bugatti_score = 0
 Ferrari_score = 0
